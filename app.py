@@ -10,9 +10,14 @@ app = Flask(__name__)
 def index():
     return render_template("login.html")
 
-@app.route("/login")
+# @app.route("/login")
+# def login():
+#     return render_template("login.html")
+
+@app.route("/derek")
 def login():
-    return render_template("login.html")
+    return render_template("/derek.html")
+
 @app.route("/feed")
 def derek():
     return render_template("/feed.html")
