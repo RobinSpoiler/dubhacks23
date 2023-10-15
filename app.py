@@ -14,17 +14,11 @@ def index():
 # def login():
 #     return render_template("login.html")
 
-@app.route("/derek")
-def login():
-    return render_template("/derek.html")
+# @app.route("/derek")
+# def login():
+#     return render_template("/derek.html")
 
-<<<<<<< HEAD
 @app.route("/feed")
-def derek():
+def feed():
     return render_template("/feed.html")
-=======
-@app.route("/markers.js")
-def markers():
-    return redirect("derek.html")
->>>>>>> backend/apiintegration
 
