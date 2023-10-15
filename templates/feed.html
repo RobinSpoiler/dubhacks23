@@ -1,0 +1,11 @@
+{%extends "index.html"%}
+    {% block title %} FEED {% endblock %}
+    
+    {% block main %} 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap" async defer></script>
+    <script src="{{ url_for('static', filename='markers.js') }}"></script>
+
+    
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    {% endblock %}
+
