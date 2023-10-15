@@ -125,8 +125,32 @@ def post():
         sql = "INSERT INTO markers (longitude, latitude, item, time) VALUES (:lon, :lat, :item, :time)"
         par = {"lon": longitude, "lat": latitude, "item": item, "time": time}
         cursor.execute(sql, par)
+
+        cursor.execute("SELECT * FROM markers")
+        rows = cursor.fetchall()
+
+        markers = []  # Your list of markers here
+
+        for marker in rows:
+            longitude = marker[0]
+            latitude = marker[1]
+            item = marker[2]
+            time = marker[3]
+
+            if longitude and latitude and item and time:
+                markers.append({
+                    'longitude': longitude,
+                    'latitude': latitude,
+                    'item': item,
+                    'time': time
+            })
+
+        # Send the information to JavaScript
+        response_data = {'markers': markers}
+
+        # Instead of returning jsonify, you can return the JSON data
+        return jsonify(response_data)
         
-        return jsonify({'longitude': longitude}, {'latitude': latitude}, {'item': item}, {'time': time})
 
 
 
