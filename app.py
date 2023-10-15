@@ -14,3 +14,7 @@ def index():
 def derek():
     return render_template("/derek.html")
 
+@app.route("/markers.js")
+def markers():
+    return redirect("derek.html")
+

@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Google Maps Example</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc"></script>
+    <title>Custom Markers with Google Maps</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap" async defer></script>
+    <script src="{{ url_for('static', filename='markers.js') }}"></script>
 </head>
 <body>
-    <div id="map" style="height: 400px; width: 100%;"></div>
-    <script>
-        function initMap() {
-            // Set the coordinates for the initial map center
-            var myLatLng = {lat: 37.7749, lng: -122.4194};
-            var myLatLng2 = {lat: 58.7749, lng: 122.4194};
-
-            // Create a map object and set the center and zoom level
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: myLatLng,
-                zoom: 12
-            });
-
-            // Add a marker to the map
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'San Francisco, CA'
-            });
-            var marker2 = new google.maps.Marker({
-                position: myLatLng2,
-                map: map,
-                title: 'Random location'
-            });
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap"></script>
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    
+    
 </body>
-</html>
+</html> 
