@@ -5,6 +5,7 @@ from flask_session import Session
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -12,3 +13,7 @@ def index():
 @app.route("/test")
 def test():
     return render_template("test.html")
+@app.route("/derek")
+def derek():
+    return render_template("/derek.html")
+
