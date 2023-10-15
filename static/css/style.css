@@ -1,0 +1,29 @@
+h1 {
+    font-family: 'Kumar One';
+    color: #F09663 ;
+    -webkit-text-stroke: 1px #C8691C;
+    font-size: 75px;
+    /* text-align: center;
+    display: inline-block; */
+  }
+
+.login-button {
+    padding: 10px;
+    padding-bottom: 2px;
+    background-color: #ff1493;
+    margin: 10px;
+    color: #fff;
+    text-shadow: none;
+    box-shadow: 1px 0 1px #be3077, 0 1px 1px #ff69b4, 2px 1px 1px #be3077, 1px 2px 1px #ff69b4, 3px 2px 1px #be3077, 2px 3px 1px #ff69b4, 4px 3px 1px #be3077, 3px 4px 1px #ff69b4, 5px 4px 1px #be3077, 4px 5px 1px #ff69b4, 6px 5px 1px #be3077;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 11px;
+    box-sizing: border-box;
+    position: relative;
+    user-select: none;
+    border: 0;
+    font-size: 45px;
+    font-weight: 400;
+    font-family: "Josefin Slab",cursive;
+    outline: 0;
+}
