@@ -1,0 +1,29 @@
+{%extends "index.html"%}
+    {% block title %} POST {% endblock %}
+    
+    {% block main %} 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap" async defer></script>
+    <script src="{{ url_for('static', filename='markers.js') }}"></script>
+
+    
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <form action="/post" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="longitude" placeholder="longitude" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="latitude" placeholder="latitude" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="item" placeholder="type of item" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="time" placeholder="available time" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        
+    </form>
+
+    {% endblock %}
+
