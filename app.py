@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 import sqlite3
@@ -103,7 +103,7 @@ def feed():
         return render_template("feed.html")
     return render_template("feed.html")
 
-@app.route("/post", method=["POST", "GET"])
+@app.route("/post", methods=["POST", "GET"])
 def post():
     if request.method == "GET":
         return render_template("post.html")
@@ -111,11 +111,18 @@ def post():
     latitude = request.form.get("latitude")
     item = request.form.get("item")
     time = request.form.get("time")
+    
 
     if not longitude or not latitude or not item or not time:
         return render_template("apology.html")
+    
+    # send to sql server
 
     
+    
+    return jsonify({'longitude': longitude}, {'latitude': latitude}, {'item': item}, {'time': time})
+
+
     
 
 if __name__ == '__main__':
