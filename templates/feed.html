@@ -1,66 +1,11 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Google Maps Example</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap"
-        async defer></script>
+{%extends "index.html"%}
+    {% block title %} FEED {% endblock %}
+    
+    {% block main %} 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap" async defer></script>
     <script src="{{ url_for('static', filename='markers.js') }}"></script>
-</head>
 
-<body>
-    <!-- {% extends "index.html" %} -->
-    <!-- {% block content %} -->
-    <div id="map" style="height: 400px; width: 100%;"></div>
-    <script>
-        // const apiKey = process.env.API_KEY;
-        function initMap() {
-            // Set the coordinates for the initial map center
-            var myLatLng = { lat: 37.7749, lng: -122.4194 };
-
-            // Create a map object and set the center and zoom level
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: myLatLng,
-                zoom: 12
-            });
-
-            // Add a marker to the map
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'San Francisco, CA'
-            });
-        }
-        // Load the Google Maps JavaScript API using your API key
-        const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap`;
-        script.defer = true;
-        script.async = true;
-        document.head.appendChild(script);
-    </script>
-    <script>
-        const apiKey = process.env.API_KEY;
-        <script async defer src='https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap' />
-    </script>
-    <!-- {% endblock %} -->
-</body>
-
-</html>
-
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Custom Markers with Google Maps</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8WvkZaF6qGXS6vlJ8x765_h_V8t_rttc&callback=initMap"
-        async defer></script>
-    <script src="{{ url_for('static', filename='markers.js') }}"></script>
-</head>
-
-<body>
+    
     <div id="map" style="width: 100%; height: 400px;"></div>
+    {% endblock %}
 
-
-</body>
-
-</html> -->
