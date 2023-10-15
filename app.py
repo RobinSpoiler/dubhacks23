@@ -103,5 +103,20 @@ def feed():
         return render_template("feed.html")
     return render_template("feed.html")
 
+@app.route("/post", method=["POST", "GET"])
+def post():
+    if request.method == "GET":
+        return render_template("post.html")
+    longitude = request.form.get("longitude")
+    latitude = request.form.get("latitude")
+    item = request.form.get("item")
+    time = request.form.get("time")
+
+    if not longitude or not latitude or not item or not time:
+        return render_template("apology.html")
+
+    
+    
+
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5000)
