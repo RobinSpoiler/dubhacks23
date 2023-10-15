@@ -129,7 +129,6 @@ def post():
         return jsonify({'longitude': longitude}, {'latitude': latitude}, {'item': item}, {'time': time})
 
 
-    
 
 if __name__ == '__main__':
     app.run(port=5000)
