@@ -7,23 +7,38 @@ h1 {
     display: inline-block; */
   }
 
-.login-button {
-    padding: 10px;
-    padding-bottom: 2px;
-    background-color: #ff1493;
-    margin: 10px;
-    color: #fff;
-    text-shadow: none;
-    box-shadow: 1px 0 1px #be3077, 0 1px 1px #ff69b4, 2px 1px 1px #be3077, 1px 2px 1px #ff69b4, 3px 2px 1px #be3077, 2px 3px 1px #ff69b4, 4px 3px 1px #be3077, 3px 4px 1px #ff69b4, 5px 4px 1px #be3077, 4px 5px 1px #ff69b4, 6px 5px 1px #be3077;
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    display: inline-block;
-    margin-top: 11px;
-    box-sizing: border-box;
-    position: relative;
-    user-select: none;
-    border: 0;
-    font-size: 45px;
-    font-weight: 400;
-    font-family: "Josefin Slab",cursive;
-    outline: 0;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
+
+.button:hover {
+    background-color: rgb(18, 80, 26)
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.button-container {
+    display: inline-block;
+    text-align: center;
+}
+
+/* .icons{
+    width: 30px;
+    height: 30px;
+} */
