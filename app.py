@@ -118,9 +118,15 @@ def post():
     
     # send to sql server
 
-    
-    
-    return jsonify({'longitude': longitude}, {'latitude': latitude}, {'item': item}, {'time': time})
+    with sqlite3.connect("neighbor.db") as users:
+        cursor = users.cursor()
+        cursor.execute('CREATE TABLE IF NOT EXISTS markers ("longitude" TEXT, "latitude" TEXT, "item" TEXT, "time" TEXT);')
+        
+        sql = "INSERT INTO markers (longitude, latitude, item, time) VALUES (:lon, :lat, :item, :time)"
+        par = {"lon": longitude, "lat": latitude, "item": item, "time": time}
+        cursor.execute(sql, par)
+        
+        return jsonify({'longitude': longitude}, {'latitude': latitude}, {'item': item}, {'time': time})
 
 
     
